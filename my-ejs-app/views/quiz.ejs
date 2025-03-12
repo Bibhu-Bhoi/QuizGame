@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive MCQ Quiz | Quiz Master</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 0.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans flex justify-center items-center min-h-screen">
+  <!-- Welcome Section -->
+  <div id="welcome-section" class="container mx-auto p-6 bg-white shadow-lg rounded-lg max-w-xl text-center">
+    <h1 class="text-2xl font-bold text-gray-800">Welcome to the Quiz!</h1>
+    <p id="welcome-message" class="text-gray-600 mt-2">
+      Get ready! Your quiz on <span id="quiz-topic"></span> will start shortly...
+    </p>
+  </div>
+
+  <!-- Quiz Container (Initially Hidden) -->
+  <div id="quiz-container" class="container mx-auto p-6 bg-white shadow-lg rounded-lg max-w-xl fade-in hidden">
+    <div class="quiz-header text-center">
+      <h1 class="text-2xl font-bold text-gray-800">Interactive MCQ Quiz</h1>
+      <p id="quiz-topic-text" class="text-gray-600 mt-2"></p>
+    </div>
+
+    <div class="mt-4">
+      <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+        <div class="progress-bar bg-blue-600 h-2 rounded-full" id="progress-bar"></div>
+      </div>
+    </div>
+
+    <div class="quiz-stats flex justify-between text-gray-700 text-sm mb-4">
+      <span id="question-counter">Question 1 of 5</span>
+      <div class="bg-blue-600 text-white px-4 py-1 rounded-lg font-medium" id="timer">30</div>
+      <span id="score">Score: 0</span>
+    </div>
+    
+    <div class="question-area mb-6">
+      <p class="question-text text-lg font-semibold text-gray-800" id="question-text">Loading question...</p>
+      <div class="options mt-4 space-y-3" id="options-container">
+        <!-- Options will be dynamically generated here -->
+      </div>
+    </div>
+
+    <div class="feedback text-center text-lg font-semibold py-3 hidden" id="feedback"></div>
+    
+    <div class="flex justify-between mt-6">
+      <button class="bg-gray-500 text-white px-4 py-2 rounded-lg cursor-not-allowed opacity-50" id="submit-btn" disabled>
+        Submit Answer
+      </button>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hidden hover:bg-blue-700 transition" id="next-btn">
+        Next Question
+      </button>
+    </div>
+  </div>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>

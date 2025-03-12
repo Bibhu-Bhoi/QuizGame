@@ -1,0 +1,39 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Master</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Quiz Master</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li> <!-- Link to About Page -->
+        <li><a href="#">Contact</a></li>
+      </ul>
+      
+    <div class="search-bar">
+      <input type="text" placeholder="    Search...">
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Welcome to Quiz Master!</h1>
+    <p>Test your knowledge across various topics. Choose a topic to start.</p>
+    <div class="topics">
+      <div class="topic-card" data-topic="science">Science</div>
+      <div class="topic-card" data-topic="history">History</div>
+      <div class="topic-card" data-topic="technology">Technology</div>
+      <div class="topic-card" data-topic="sports">Sports</div>
+    </div>
+    <a href="#" class="start-btn" id="start-quiz">Start Quiz</a>
+  </div>
+    <script src="script.js"></script>
+</body>
+</html>
