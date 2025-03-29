@@ -54,13 +54,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const topic = urlParams.get('topic');
 
-    if (!topic || !quizData[topic]) {
-        alert("Invalid topic selected. Redirecting to home.");
-        window.location.href = "/"; // Redirect if topic is missing
-        return;
+    // Apply topic validation only on the quiz page
+    if (window.location.pathname === '/quiz') {
+        if (!topic || !quizData[topic]) {
+            alert("Invalid topic selected. Redirecting to home.");
+            window.location.href = "/";
+        }
     }
 
     console.log("Selected Topic:", topic); // Debugging check
+}); // Debugging check
 
     const welcomeSection = document.getElementById('welcome-section');
     const quizContainer = document.getElementById('quiz-container');

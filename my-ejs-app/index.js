@@ -1,8 +1,12 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const homeRouter = require('./routes/home');
 
 const app = express();
+
+// Middleware to parse form data
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set view engine
 app.set('views', path.join(__dirname, 'views'));
